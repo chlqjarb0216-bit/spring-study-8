@@ -21,9 +21,9 @@
 	<div>
 		<a href="/request03/param2?name=abc&count=123">param2 경로로 get 요청</a>
 		
-		http://localhost:8080/request03/param2?name=abc&count=123
+		http://localhost:8080/request03/param2?name=abc&amp;count=123
 		<br>
-		/request03/param2?name=abc&count=123
+		/request03/param2?name=abc&amp;count=123
 		
 	</div>
 	

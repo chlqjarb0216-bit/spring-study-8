@@ -14,6 +14,7 @@ import com.app.dto.study.request.Product;
 @Controller
 public class ViewData01Controller {
 
+	@SuppressWarnings("unused")
 	private final MainController mainController;
 
 	ViewData01Controller(MainController mainController) {
