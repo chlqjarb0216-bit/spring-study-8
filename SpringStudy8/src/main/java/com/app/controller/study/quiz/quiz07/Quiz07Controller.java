@@ -16,8 +16,6 @@ public class Quiz07Controller {
 	@GetMapping("/listTest")
 	public String listTest(@RequestParam String type, Model model) {
 
-		model.addAttribute("type", type);
-
 		List<Object> carrigeList = new ArrayList<>();
 
 		if (type.equals("member")) {
