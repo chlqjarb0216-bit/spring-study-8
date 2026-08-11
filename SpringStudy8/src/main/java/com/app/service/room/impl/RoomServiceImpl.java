@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.dao.room.RoomDAO;
+import com.app.dto.room.Info;
+import com.app.dto.room.Post;
 import com.app.dto.room.Room;
 import com.app.service.room.RoomService;
 
@@ -30,6 +32,24 @@ public class RoomServiceImpl implements RoomService {
 		List<Room> roomList = roomDAO.findRoomList();
 
 		return roomList;
+	}
+
+	@Override
+	public Room findRoom(String id) {
+		Room room = roomDAO.findRoom(id);
+		return room;
+	}
+
+	@Override
+	public Info getServiceInfo() {
+		Info info = roomDAO.getServiceInfo();
+		return info;
+	}
+
+	@Override
+	public List<Post> findPostList() {
+		List<Post> postList = roomDAO.findPostList();
+		return postList;
 	}
 
 }

@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.app.dao.room.RoomDAO;
+import com.app.dto.room.Info;
+import com.app.dto.room.Post;
 import com.app.dto.room.Room;
 
 // 데이터소스와 연결/통신하는 역할
@@ -22,6 +24,24 @@ public class RoomDAOImpl implements RoomDAO {
 		System.out.println("RoomDAOImpl findRoomList");
 
 		// return
+		return null;
+	}
+
+	@Override
+	public Room findRoom(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Info getServiceInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Post> findPostList() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
