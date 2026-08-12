@@ -34,6 +34,14 @@ public class RoomDAOImpl implements RoomDAO {
 	}
 
 	@Override
+	public int saveRoom(Room room) {
+
+		//DB에 room정보 테이블에 room 정보를 저장
+
+		return 0;
+	}
+
+	@Override
 	public Info getServiceInfo() {
 		// TODO Auto-generated method stub
 		return null;

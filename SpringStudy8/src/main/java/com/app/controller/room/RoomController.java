@@ -2,13 +2,10 @@ package com.app.controller.room;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.app.dto.room.Calendar;
 import com.app.dto.room.Info;
@@ -51,15 +48,15 @@ public class RoomController {
 		return "room/serviceInfo";
 	}
 
-	@RequestMapping("/reservation")
-	public String reservation(HttpServletRequest request) {
-
-		Room room = roomService.findRoom(request.getParameter("room"));
-		Calendar roomCalendar = room.getInfoCalendar();
-		request.setAttribute("roomInfo", roomCalendar);
-
-		return "room/reservation";
-	}
+	//	@RequestMapping("/reservation")
+	//	public String reservation(HttpServletRequest request) {
+	//
+	//		Room room = roomService.findRoom(request.getParameter("room"));
+	//		Calendar roomCalendar = room.getInfoCalendar();
+	//		request.setAttribute("roomInfo", roomCalendar);
+	//
+	//		return "room/reservation";
+	//	}
 
 	@GetMapping("/gallery")
 	public String gallery(Model model) {
