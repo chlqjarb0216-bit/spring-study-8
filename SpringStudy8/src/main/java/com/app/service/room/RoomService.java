@@ -13,6 +13,8 @@ public interface RoomService {
 
 	Room findRoomByRoomId(int roomId);
 
+	int removeRoom(int roomId);
+
 	Info getServiceInfo();
 
 	List<Post> findPostList();
