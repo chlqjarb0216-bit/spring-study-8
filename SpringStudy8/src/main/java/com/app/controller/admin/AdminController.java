@@ -28,10 +28,10 @@ public class AdminController {
 		//화면으로부터 입력한 값이 잘 넘어왔는지 체크
 		System.out.println(room);
 
-		@SuppressWarnings("unused")
 		int result = roomService.saveRoom(room);
 
 		// result 값 확인 -> 성공/실패 -> 진행
+		System.out.println("insert 처리 결과 리턴받은 적용된 행의 수: " + result);
 
 		return "admin/registerRoom";
 	}
