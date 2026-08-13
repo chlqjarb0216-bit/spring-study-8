@@ -35,12 +35,6 @@ public class RoomDAOImpl implements RoomDAO {
 	}
 
 	@Override
-	public Room findRoom(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public int saveRoom(Room room) {
 
 		//DB에 room정보 테이블에 room 정보를 저장
@@ -49,6 +43,12 @@ public class RoomDAOImpl implements RoomDAO {
 		//수행 적용된 행의 수
 
 		return result;
+	}
+
+	@Override
+	public Room findRoomByRoomId(int roomId) {
+		Room room = sqlSessionTemplate.selectOne("room_mapper.findRoomByRoomId", roomId);
+		return room;
 	}
 
 	@Override

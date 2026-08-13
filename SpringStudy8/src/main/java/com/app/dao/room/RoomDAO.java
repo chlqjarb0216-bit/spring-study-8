@@ -11,7 +11,7 @@ public interface RoomDAO {
 
 	int saveRoom(Room room);
 
-	Room findRoom(String id);
+	Room findRoomByRoomId(int roomId);
 
 	Info getServiceInfo();
 
