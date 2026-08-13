@@ -36,7 +36,7 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
 			value="oracle.jdbc.OracleDriver" />
 		<property
 			name="url"
-			value="jdbc:oracle:thin:@localhost:1521:orcl" />
+			value="jdbc:oracle:thin:@localhost:1521:orclpdb" />
 		<property
 			name="username"
 			value="scott" />
