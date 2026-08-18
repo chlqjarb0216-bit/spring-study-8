@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<!DOCTYPE mapper PUBLIC
-		   "-//mybatis.org//DTD Mapper 3.0//EN" 
-		   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="user_mapper">
 
@@ -11,10 +9,10 @@
 		parameterType="User">
 		INSERT INTO T_USER
 		VALUES (
-			#{id},
-			#{pw},
-			#{name},
-			#{userType}
+		#{id},
+		#{pw},
+		#{name},
+		#{userType}
 		)
 	</insert>
 
@@ -25,6 +23,68 @@
 		FROM T_USER
 	</select>
 
+	<select
+		id="findUserListBySearchCondition"
+		parameterType="UserSearchCondition"
+		resultType="User">
+		SELECT *
+		FROM T_USER
+		<where>
+			<trim
+				prefixOverrides="OR"
+				prefix="("
+				suffix=")">
+				<if test="name!=null and name!='' ">
+					name LIKE '%' || #{searchKeyword} || '%'
+				</if>
+				<if test="id!=null and id!='' ">
+					OR id LIKE '%' || #{searchKeyword} || '%'
+				</if>
+			</trim>
+			<if test="userType!=null and userType!='' ">
+				AND user_type = #{userType}
+			</if>
+		</where>
+
+
+		<!-- SELECT * -->
+		<!-- FROM T_USER -->
+		<!-- <where> -->
+		<!-- <if test="(name!=null and name!='') or (id!=null and id!='') "> -->
+		<!-- ( -->
+		<!-- <if test="name!=null and name!='' "> -->
+		<!-- name LIKE '%' || #{searchKeyword} || '%' -->
+		<!-- </if> -->
+		<!-- <if test="id!=null and id!='' "> -->
+		<!-- <if test="name!=null and name!='' "> -->
+		<!-- OR id LIKE '%' || #{searchKeyword} || '%' -->
+		<!-- </if> -->
+		<!-- <if test="name==null or name=='' "> -->
+		<!-- id LIKE '%' || #{searchKeyword} || '%' -->
+		<!-- </if> -->
+		<!-- </if> -->
+		<!-- ) -->
+		<!-- </if> -->
+		<!-- <if test="userType!=null and userType!='' "> -->
+		<!-- AND user_type = #{userType} -->
+		<!-- </if> -->
+		<!-- </where> -->
+
+
+		<!-- SELECT * -->
+		<!-- FROM T_USER -->
+		<!-- <where> -->
+		<!-- <if test="name!=null and name!='' "> -->
+		<!-- name LIKE '%' || #{searchKeyword} || '%' -->
+		<!-- </if> -->
+		<!-- <if test="id!=null and id!='' "> -->
+		<!-- AND id LIKE '%' || #{searchKeyword} || '%' -->
+		<!-- </if> -->
+		<!-- <if test="userType!=null and userType!='' "> -->
+		<!-- AND user_type = #{userType} -->
+		<!-- </if> -->
+		<!-- </where> -->
+	</select>
 
 	<select
 		id="findUserById"
@@ -51,10 +111,10 @@
 		parameterType="User">
 		UPDATE T_USER
 		SET
-			pw = #{pw},
-			name = #{name},
-			user_type =
-			#{userType}
+		pw = #{pw},
+		name = #{name},
+		user_type =
+		#{userType}
 		WHERE id = #{id}
 	</update>
 
@@ -63,7 +123,7 @@
 		parameterType="User">
 		UPDATE T_USER
 		SET
-			pw = #{pw}
+		pw = #{pw}
 		WHERE id = #{id}
 	</update>
 

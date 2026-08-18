@@ -3,6 +3,7 @@ package com.app.service.user;
 import java.util.List;
 
 import com.app.dto.user.User;
+import com.app.dto.user.UserSearchCondition;
 
 public interface UserService {
 	public int saveUser(User user);
@@ -12,6 +13,8 @@ public interface UserService {
 	public int saveAdminUser(User user);
 
 	public List<User> findUserList();
+
+	public List<User> findUserListBySearchCondition(UserSearchCondition uearSearchCondition);
 
 	public User checkUserLogin(User user);
 
