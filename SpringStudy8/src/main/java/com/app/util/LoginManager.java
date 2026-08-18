@@ -15,7 +15,11 @@ public class LoginManager {
 	}
 
 	public static String getLoginUserId(HttpSession session) {
-		return session.getAttribute(SESSION_LOGIN_USER_KEY).toString();
+		Object loginUserId = session.getAttribute(SESSION_LOGIN_USER_KEY);
+		if (loginUserId == null) {
+			return null;
+		}
+		return loginUserId.toString();
 	}
 
 	public static String getLoginUserId(HttpServletRequest request) {

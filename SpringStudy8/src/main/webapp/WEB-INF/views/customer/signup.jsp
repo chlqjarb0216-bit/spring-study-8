@@ -12,8 +12,8 @@
 
 	<!-- 	모든 값을 입력받는 경우 -->
 	<form action="" method="post">
-		사용자아이디 : <input type="text" name="id"><br> 사용자 이름 : <input
-			type="text" name="name"><br> 사용자 비번 : <input
+		사용자아이디 : <input type="text" name="id" required><br> 사용자 이름 : <input
+			type="text" name="name" required><br> 사용자 비번 : <input
 			type="password" name="pw"><br> <br>
 		<!-- "사용자"회원가입 userType -> 서버에서 CUS로 세팅  -->
 		<!-- 		 <input type="hidden" name="userType" value="CUS"> -->

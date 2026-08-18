@@ -119,4 +119,73 @@ public class CustomerController {
 		return "redirect:/main";
 	}
 
+	@GetMapping("/customer/modifyPw")
+	public String modifyPw(HttpSession session, Model model) {
+
+		//로그인 상태 -> 마이페이지
+		// -> 비밀번호 변경 페이지로 이동
+
+		String userId = LoginManager.getLoginUserId(session);
+		if (userId == null) {
+			return "redirect:/customer/signin";
+		}
+
+		User user = userService.findUserById(userId);
+		model.addAttribute("user", user);
+
+		return "customer/modifyPw";
+	}
+
+	@PostMapping("/customer/modifyPw")
+	public String modifyPwAction(User user) {
+
+		System.out.println(user);
+
+		// 비밀번호 변경
+
+		int result = userService.modifyUser(user);
+		if (result > 0) { //성공
+			//			LoginManager.logout(session);
+			//			return "redirect:/customer/signin";
+			return "redirect:/customer/mypage";
+		} else { //수정 실패
+			return "redirect:/customer/modifyPw";
+		}
+	}
+
+	@GetMapping("/customer/modifyPw2")
+	public String modifyPw2() {
+		return "customer/modifyPw2";
+	}
+
+	@PostMapping("/customer/modifyPw2")
+	public String modifyPw2Action(User user, HttpSession session) {
+
+		// user 객체에는 사용자가 입력한 바꿀 비번(pw) 데이터 1개만 존재
+		// 비번 바꾸려는 사용자 pk	id 필요/세팅
+
+		// mypage -> 비번변경 페이지
+		// 로그인 O -> session 로그인 사용자 아이디 존재
+
+		// set pw = ?
+		// where id = ?
+
+		user.setId(LoginManager.getLoginUserId(session));
+
+		//user 객체
+		//로그인한 id
+		//바꿀 pw
+
+		System.out.println(user);
+
+		int result = userService.modifyUserPw(user);
+		if (result > 0) { //성공
+			//			LoginManager.logout(session);
+			//			return "redirect:/customer/signin";
+			return "redirect:/customer/mypage";
+		} else { //수정 실패
+			return "redirect:/customer/modifyPw2";
+		}
+	}
+
 }
