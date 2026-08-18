@@ -1,12 +1,11 @@
 package com.app.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
 
-	@RequestMapping("/")
+	//	@RequestMapping("/")
 	public String home() {
 
 		//--ViewResolver 설정이 없으면

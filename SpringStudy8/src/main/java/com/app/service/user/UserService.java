@@ -12,4 +12,8 @@ public interface UserService {
 	public int saveAdminUser(User user);
 
 	public List<User> findUserList();
+
+	public User checkUserLogin(User user);
+
+	public User findUserById(String id);
 }
