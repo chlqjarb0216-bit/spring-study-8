@@ -91,11 +91,12 @@ public class Rest03Controller {
 	@GetMapping("/rest/response3")
 	public ApiResponseDelivery response3() {
 
+		// header
 		ApiResponseHeader apiResponseHeader = new ApiResponseHeader();
-
 		apiResponseHeader.setResultCode(ApiCommonCode.API_RESULT_SUCCESS);
 		apiResponseHeader.setResultMessage(ApiCommonCode.API_RESULT_SUCCESS_MSG);
 
+		// body
 		ApiDelivery apiDelivery = new ApiDelivery();
 
 		apiDelivery.setStaffName("나배달");
@@ -139,7 +140,6 @@ public class Rest03Controller {
 
 		// header
 		ApiResponseHeader apiResponseHeader = new ApiResponseHeader();
-
 		apiResponseHeader.setResultCode(ApiCommonCode.API_RESULT_SUCCESS);
 		apiResponseHeader.setResultMessage(ApiCommonCode.API_RESULT_SUCCESS_MSG);
 
