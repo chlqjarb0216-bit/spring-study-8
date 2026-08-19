@@ -12,9 +12,12 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<source>11</source>
+					<!--<source>11</source>
 					<target>11</target>
-					<release>11</release>
+					<release>11</release>-->
+					<source>15</source>
+					<target>15</target>
+					<release>15</release>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -100,6 +103,23 @@
 			<version>19.21.0.0</version>
 		</dependency>
 
+		<!-- Source:
+		https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Source:
+		https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.22.2</version>
+			<scope>compile</scope>
+		</dependency>
 
 	</dependencies>
 
