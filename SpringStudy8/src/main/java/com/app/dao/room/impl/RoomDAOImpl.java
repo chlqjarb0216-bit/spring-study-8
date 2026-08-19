@@ -10,6 +10,8 @@ import com.app.dao.room.RoomDAO;
 import com.app.dto.room.Info;
 import com.app.dto.room.Post;
 import com.app.dto.room.Room;
+import com.app.dto.room.RoomSearchCondition;
+import com.app.dto.user.User;
 
 // 데이터소스와 연결/통신하는 역할
 // DB연동 -> DAO
@@ -32,6 +34,11 @@ public class RoomDAOImpl implements RoomDAO {
 		List<Room> roomList = sqlSessionTemplate.selectList("room_mapper.findRoomList");
 
 		return roomList;
+	}
+
+	@Override
+	public List<User> findRoomListBySearchCondition(RoomSearchCondition roomSearchCondition) {
+		return sqlSessionTemplate.selectList("room_mapper.findRoomListBySearchCondition", roomSearchCondition);
 	}
 
 	@Override

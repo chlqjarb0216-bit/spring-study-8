@@ -18,6 +18,9 @@
 			type="com.app.dto.room.Room"
 			alias="Room" />
 		<typeAlias
+			type="com.app.dto.room.RoomSearchCondition"
+			alias="RoomSearchCondition" />
+		<typeAlias
 			type="com.app.dto.user.User"
 			alias="User" />
 		<typeAlias

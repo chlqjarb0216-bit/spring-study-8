@@ -13,6 +13,32 @@
 	<h2>rooms 객실 목록</h2>
 
 	<div>
+		<form action="" method="get">
+			<h2>검색기준</h2>
+
+			<label for="">
+				건물명 :
+				<input type="text" name="buildingName"
+					value="${ roomSearchCondition.buildingName }" />
+			</label>
+
+			<h4>뷰타입</h4>
+			<select name="viewType">
+				<option value="">선택없음</option>
+				<option value="OCN"
+					<c:if test="${ roomSearchCondition.viewType=='OCN' }">selected</c:if>>오션뷰</option>
+				<option value="CTY"
+					<c:if test="${ roomSearchCondition.viewType=='CTY' }">selected</c:if>>시티뷰</option>
+				<option value="MOT"
+					<c:if test="${ roomSearchCondition.viewType=='MOT' }">selected</c:if>>마운틴뷰</option>
+			</select>
+			<br>
+			<button type="submit">검색</button>
+		</form>
+	</div>
+	<br />
+	<br />
+	<div>
 		<button id="btn_registerRoom">객실 추가하기</button>
 	</div>
 

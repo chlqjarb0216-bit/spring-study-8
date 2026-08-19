@@ -9,6 +9,8 @@ import com.app.dao.room.RoomDAO;
 import com.app.dto.room.Info;
 import com.app.dto.room.Post;
 import com.app.dto.room.Room;
+import com.app.dto.room.RoomSearchCondition;
+import com.app.dto.user.User;
 import com.app.service.room.RoomService;
 
 // new RoomServiceImpl()
@@ -45,6 +47,11 @@ public class RoomServiceImpl implements RoomService {
 		List<Room> roomList = roomDAO.findRoomList();
 
 		return roomList;
+	}
+
+	@Override
+	public List<User> findRoomListBySearchCondition(RoomSearchCondition roomSearchCondition) {
+		return roomDAO.findRoomListBySearchCondition(roomSearchCondition);
 	}
 
 	@Override

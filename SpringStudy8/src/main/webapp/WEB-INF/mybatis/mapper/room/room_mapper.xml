@@ -29,6 +29,23 @@
 	</select>
 
 	<select
+		id="findRoomListBySearchCondition"
+		parameterType="RoomSearchCondition"
+		resultType="Room">
+		SELECT *
+		FROM T_ROOM
+		<where>
+			<if test="buildingName!=null and buildingName!='' ">
+				building_name = #{buildingName}
+			</if>
+			<if test="viewType!=null and viewType!='' ">
+				AND view_type = #{viewType}
+			</if>
+		</where>
+		ORDER BY room_id
+	</select>
+
+	<select
 		id="findRoomByRoomId"
 		parameterType="int"
 		resultType="Room">
